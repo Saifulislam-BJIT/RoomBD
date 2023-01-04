@@ -1,4 +1,4 @@
-package com.saiful.roomdata
+package com.saiful.roomdata.fragment
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.saiful.roomdata.ui.UserViewModel
+import com.saiful.roomdata.R
 import com.saiful.roomdata.ui.model.User
+import com.saiful.roomdata.viewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 
 

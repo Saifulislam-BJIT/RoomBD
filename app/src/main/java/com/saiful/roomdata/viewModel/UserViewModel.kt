@@ -1,12 +1,12 @@
-package com.saiful.roomdata.ui
+package com.saiful.roomdata.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.saiful.roomdata.repository.UserRepository
 import com.saiful.roomdata.ui.model.User
 import com.saiful.roomdata.ui.model.UserDatabase
-import com.saiful.roomdata.ui.model.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -23,6 +23,24 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     fun addUser(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)
+        }
+    }
+
+    fun updateUser(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.userUpdate(user)
+        }
+    }
+
+    fun deleteUser(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteUser(user)
+        }
+    }
+
+    fun deleteAllUser() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAllUser()
         }
     }
 }
